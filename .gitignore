@@ -1,0 +1,27 @@
+# Entorno virtual
+venv/
+
+# Variables de entorno con credenciales reales
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Migraciones compiladas
+migrations/versions/*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# docker
+postgres_data/
+.postgres/
+
