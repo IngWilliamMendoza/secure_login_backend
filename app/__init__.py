@@ -28,7 +28,7 @@ def create_app(config_class: type = None) -> Flask:
     cors.init_app(
         app,
         resources={r"/api/*": {"origins": app.config["FRONTEND_URL"]}},
-        supports_credentials=True
+        supports_credentials=app.config["CORS_SUPPORTS_CREDENTIALS"]
     )
 
     # Importar modelos para que Flask-Migrate los detecte

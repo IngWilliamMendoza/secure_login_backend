@@ -56,10 +56,11 @@ class Config:
 
     # CORS
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:4321")
-    CORS_SUPPORTS_CREDENTIALS: bool = True
+    CORS_SUPPORTS_CREDENTIALS: bool = os.getenv("CORS_SUPPORTS_CREDENTIALS", "True") == "True"
 
 
     # reCAPTCHA
+    RECAPTCHA_ENABLED: bool = os.getenv("RECAPTCHA_ENABLED", "True") == "True"
     RECAPTCHA_SECRET_KEY: str = os.getenv("RECAPTCHA_SECRET_KEY") or ""
     RECAPTCHA_SITE_KEY: str = os.getenv("RECAPTCHA_SITE_KEY") or ""
     RECAPTCHA_MIN_SCORE: float = float(os.getenv("RECAPTCHA_MIN_SCORE", "0.5"))

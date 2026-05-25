@@ -10,6 +10,11 @@ class RecaptchaService:
         Verifica un token de reCAPTCHA V3 con Google.
         Retorna una tupla (exito, score, mensaje).
         """
+
+        # omitir verificación en desarrollo
+        if not current_app.config.get("RECAPTCHA_ENABLED", True):
+            return True, 1.0, "Verificación omitida en desarrollo."
+
         try:
             if not token:
                 return False, 0.0, "Token de reCAPTCHA requerido."
